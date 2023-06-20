@@ -14,6 +14,7 @@ class PostView(APIView):
         return Response(serializer.data)
 
     def post(self, request):
+        print(request.data)
         serializer = PostSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
